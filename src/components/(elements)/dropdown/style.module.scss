@@ -1,0 +1,18 @@
+.dropdown {
+	select {
+		padding: 32px 64px;
+		font-size: 32px;
+
+		border: none;
+		outline: none;
+
+		background-color: transparent;
+
+		*:nth-child(odd) {
+			color: red;
+			font-size: 12px;
+			padding: 32px !important;
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,63 @@
+@import "@/styles/colors";
+@import "@/styles/sizes";
+
+@import "../components/header/style.module.scss";
+@import "../components/footer/style.module.scss";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+div {
+	display: flex;
+}
+
+body {
+	font-family:
+		"Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+		"Open Sans", "Helvetica Neue", sans-serif;
+}
+
+main {
+	// Use this for non-fixed header.
+	// min-height: calc(100vh - $headerHeight - $footerHeight);
+	min-height: calc(100vh - $footerHeight);
+
+	// Comment this to use non-fixed header
+	padding-top: $headerHeight;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+section {
+	width: 100%;
+	max-width: 1024px;
+	display: flex;
+}
+
+button,
+input[type=button],
+input[type=submit] {
+	padding: $spacing-btn;
+	border: none;
+
+	border-radius: 24px;
+	background-color: $primary-color;
+	color: white;
+
+	cursor: pointer;
+
+	&:hover {}
+}
+
+svg {
+	height: 16px;
+}

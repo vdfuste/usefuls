@@ -1,0 +1,56 @@
+@import "@/styles/colors";
+@import "@/styles/sizes";
+
+.login {
+	flex-direction: column;
+	align-items: center;
+	// align-items: flex-start;
+	// justify-content: center;
+	flex-grow: 1;
+
+	h1 {
+		margin: 32px;
+		font-size: 28pt;
+	}
+
+	h2 {
+		margin-bottom: 16px;
+	}
+
+	form {
+		display: flex;
+		flex-direction: column;
+		gap: $spacing-md;
+
+		.separator {
+			margin: $spacing-md $spacing-lg 0 $spacing-lg;
+			justify-content: center;
+			border-top: 1px solid $lightgray;
+
+			span {
+				margin-top: -$spacing-md;
+				padding: 0 $spacing-md;
+				background-color: white;
+			}
+		}
+
+		input[type=text],
+		input[type=password] {
+			padding: $spacing-btn;
+			border: 1px solid $lightgray;
+			border-radius: $spacing-lg;
+		}
+
+		.googleBtn {
+			background-color: crimson;
+		}
+
+		.facebookBtn {
+			// background-color: crimson;
+		}
+
+		.appleBtn {
+			background-color: black;
+		}
+	}
+}

@@ -1,0 +1,80 @@
+@import "@/styles/colors";
+@import "@/styles/sizes";
+
+.header {
+	width: 100%;
+	height: $headerHeight;
+	position: fixed;
+
+	display: flex;
+
+	background-color: $background-color;
+	border-bottom: 1px solid $lightergray;
+
+	z-index: 1;
+
+	a {
+		height: $headerHeight;
+		padding: $spacing-btn;
+
+		display: flex;
+		align-items: center;
+
+		color: $lightgray;
+		text-decoration: none;
+		background-color: transparent;
+
+		&:hover {
+			color: black;
+		}
+	}
+
+	.icon {
+		width: 200px;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.nav {
+		flex-grow: 1;
+
+		ul {
+			display: flex;
+			justify-content: center;
+			list-style-type: none;
+
+			li {}
+		}
+	}
+
+	.utils {
+		min-width: 200px;
+		justify-content: flex-end;
+
+		svg {
+			height: 20px;
+		}
+
+		.lang {
+			align-items: center;
+
+			select {
+				height: 100%;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.header {
+		.nav {
+			ul {
+				flex-direction: column;
+			}
+		}
+
+		.utils {
+			justify-content: center;
+		}
+	}
+}

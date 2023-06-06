@@ -1,0 +1,13 @@
+@import "@/styles/colors";
+@import "@/styles/sizes";
+
+.footer {
+	height: $footerHeight;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	border-top: 1px solid $lightergray;
+	color: $lightgray;
+}
