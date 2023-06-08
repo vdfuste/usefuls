@@ -1,10 +1,14 @@
+$sidebarWidth: 250px;
+$sidebarWidthCollapsed: 96px;
+
 $headerHeight: 96px;
-$sidebarWidth: 350px;
 $footerHeight: 72px;
 
-$spacing-sm: 4px;
-$spacing-md: 12px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
 $spacing-lg: 24px;
 $spacing-xl: 32px;
+$spacing-2x: 48px;
+$spacing-3x: 56px;
 
-$spacing-btn: 12px 24px;
+$spacing-btn: $spacing-md $spacing-lg;

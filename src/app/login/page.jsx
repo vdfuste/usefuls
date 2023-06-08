@@ -1,16 +1,8 @@
-"use client";
-
 import style from "./style.module.scss";
 
-import { useContext } from "react";
-import { I18nContext } from "@/providers/i18n";
-
 const Login = () => {
-	const { i18n } = useContext(I18nContext);
-
 	return (
 		<section className={style.login}>
-			{/* <h1>{i18n.pages.login.title}</h1> */}
 			<h1>Login</h1>
 			<form action="">
 				<input type="text" placeholder="Email" />

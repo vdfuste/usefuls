@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleRight, faArrowUpRightFromSquare, faBars, faCartShopping, faGlobe, faUserCircle } from "@fortawesome/free-solid-svg-icons";
+import { faAngleRight, faArrowUpRightFromSquare, faBars, faCalculator, faCartShopping, faCoins, faFish, faGlobe, faLayerGroup, faServer, faUserCircle, faWaveSquare } from "@fortawesome/free-solid-svg-icons";
 
 export const icons = {
 	user: <FontAwesomeIcon icon={faUserCircle} />,
@@ -10,4 +10,12 @@ export const icons = {
 	},
 	cart: <FontAwesomeIcon icon={faCartShopping} />,
 	externalLink: <FontAwesomeIcon icon={faArrowUpRightFromSquare} />,
+	sidebar: {
+		standard: <FontAwesomeIcon icon={faCalculator} />,
+		tips: <FontAwesomeIcon icon={faCoins} />,
+		binary: <FontAwesomeIcon icon={faServer} />,
+		shadow: <FontAwesomeIcon icon={faLayerGroup} />,
+		sine: <FontAwesomeIcon icon={faWaveSquare} />,
+		hooks: <FontAwesomeIcon icon={faFish} />,
+	}
 };
