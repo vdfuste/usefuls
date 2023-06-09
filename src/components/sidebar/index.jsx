@@ -1,9 +1,12 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import { Fira_Code } from "next/font/google";
 import style from "./style.module.scss";
 
 import { icons } from "@/utils/icons";
+
+const font = Fira_Code({ subsets: ["latin"] });
 
 const Routes = () => {
 	const routes = [
@@ -60,7 +63,7 @@ const SideBar = () => {
 		<div className={`${style.sidebar} ${open ? style.collapsed : ""}`}>
 			<div className={style.header}>
 				<div className={style.title}>
-					<h1><Link href="/">useFuls( )</Link></h1>
+					<h1 className={font.className}><Link href="/">useFuls()</Link></h1>
 				</div>
 				<div
 					className={style.showButton}

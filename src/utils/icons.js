@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleRight, faArrowUpRightFromSquare, faBars, faCalculator, faCartShopping, faCoins, faFish, faGlobe, faLayerGroup, faServer, faUserCircle, faWaveSquare } from "@fortawesome/free-solid-svg-icons";
+import { faAngleRight, faArrowUpRightFromSquare, faBars, faCalculator, faCartShopping, faCoins, faCopy, faFish, faGlobe, faLayerGroup, faServer, faUserCircle, faWaveSquare } from "@fortawesome/free-solid-svg-icons";
 
 export const icons = {
 	user: <FontAwesomeIcon icon={faUserCircle} />,
@@ -17,5 +17,6 @@ export const icons = {
 		shadow: <FontAwesomeIcon icon={faLayerGroup} />,
 		sine: <FontAwesomeIcon icon={faWaveSquare} />,
 		hooks: <FontAwesomeIcon icon={faFish} />,
-	}
+	},
+	copy: <FontAwesomeIcon icon={faCopy} />,
 };
