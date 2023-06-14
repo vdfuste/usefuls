@@ -21,8 +21,9 @@ const Routes = () => {
 		{
 			title: "Tools",
 			items: [
-				{ label: "Shadow Editor", url: "/tools/shadow", icon: icons.sidebar.shadow },
-				{ label: "Sine Function Editor", url: "/tools/sin-cos", icon: icons.sidebar.sine },
+				{ label: "Shadows Editor", url: "/tools/shadows-editor", icon: icons.sidebar.shadow },
+				{ label: "Gradient Editor", url: "/tools/gradient-editor", icon: icons.sidebar.gradient },
+				{ label: "Sine Wave Editor", url: "/tools/wave-editor", icon: icons.sidebar.wave },
 			]
 		},
 		{
