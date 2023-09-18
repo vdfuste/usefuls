@@ -15,7 +15,7 @@ const Routes = () => {
 			items: [
 				{ label: "Standard", url: "/calculators/standard", icon: icons.sidebar.standard },
 				{ label: "Tips", url: "/calculators/tips", icon: icons.sidebar.tips },
-				{ label: "Binary", url: "/calculators/binary", icon: icons.sidebar.binary },
+				//{ label: "Binary", url: "/calculators/binary", icon: icons.sidebar.binary },
 			]
 		},
 		{
@@ -23,15 +23,15 @@ const Routes = () => {
 			items: [
 				{ label: "Shadows Editor", url: "/tools/shadows-editor", icon: icons.sidebar.shadow },
 				{ label: "Gradient Editor", url: "/tools/gradient-editor", icon: icons.sidebar.gradient },
-				{ label: "Sine Wave Editor", url: "/tools/wave-editor", icon: icons.sidebar.wave },
+				//{ label: "Sine Wave Editor", url: "/tools/wave-editor", icon: icons.sidebar.wave },
 			]
 		},
-		{
+		/*{
 			title: "Miscellaneous",
 			items: [
 				{ label: "Hooks", url: "/misc/hooks", icon: icons.sidebar.hooks },
 			]
-		},
+		},*/
 	];
 
 	return <nav className={style.nav}>

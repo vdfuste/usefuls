@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment, useEffect, useState } from "react";
+import { useState } from "react";
 import { Fira_Code } from "next/font/google";
 import style from "./style.module.scss";
 import { icons } from "@/utils/icons";
@@ -86,9 +86,25 @@ const CodeBox = ({ generatedStyles }) => {
 	);
 };
 
-const GradientBtn = ({ generatedStyle }) => {
+const GradientBtn = ({ value, generatedStyle, selected = false, onClick }) => {
 	return (
-		<button></button>
+		<button
+			className={`${style.gradientBtn} ${selected ? style.selected : ""}`}
+			style={{ backgroundImage: gradientToCSS(generatedStyle) }}
+			onClick={() => onClick()}
+		>{value}</button>
+	);
+};
+
+const GadientButtons = ({ gradients, gradientId, handleSelectGradient, handleAddGradient }) => {
+	return (
+		<ul>
+			{gradients.map((gr, index) => <li key={index}>
+				<GradientBtn
+					selected={index === gradientId}
+					onClick={() => handleSelectGradient(index)} />
+			</li>)}
+		</ul>
 	);
 };
 
