@@ -3,28 +3,14 @@
 import { useState } from "react";
 import { Fira_Code } from "next/font/google";
 import style from "./style.module.scss";
+
 import { icons } from "@/utils/icons";
+import { settings, defaultShadowStyle } from "@/utils/tools/shadows/settings";
+import { settingsToCSS } from "@/utils/tools/shadows/utils";
 
 const font = Fira_Code({ subsets: ["latin"] });
 
 const range = 200;
-const settings = [
-	{ type: "range", label: "Offset X: ", property: "offsetX" },
-	{ type: "range", label: "Offset Y: ", property: "offsetY" },
-	{ type: "range", label: "Blur Radius: ", property: "blur", min: 0 },
-	{ type: "range", label: "Spread: ", property: "spread" },
-	{ type: "color", label: "Color: ", property: "color" },
-	{ type: "checkbox", label: "Inset ", property: "inset" },
-];
-
-const defaultShadowStyle = {
-	offsetX: 0, offsetY: 12,
-	blur: 24, spread: -12,
-	color: "#c6c6c6",
-	inset: false
-};
-
-const settingsToCSS = sh => `${sh.offsetX}px ${sh.offsetY}px ${sh.blur}px ${sh.spread !== "0" ? sh.spread + "px" : ""} ${sh.color}${(sh.inset ? " inset" : "")}`;
 
 const ShadowBtn = ({ value, color = "#c6c6c6", inset, selected = false, onClick }) => {
 	return (

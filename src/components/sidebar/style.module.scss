@@ -18,7 +18,7 @@
 	transition: width 250ms ease-in-out;
 
 	a {
-		padding: $spacing-btn;
+		padding: $sp-btn;
 		display: flex;
 
 		text-decoration: none;
@@ -31,7 +31,7 @@
 			color 450ms ease-out 0ms;
 
 		span {
-			margin-left: $spacing-sm;
+			margin-left: $sp-100;
 
 			transition: margin-left 250ms ease-in-out;
 		}
@@ -97,7 +97,7 @@
 			}
 
 			h2 {
-				margin: $spacing-btn;
+				margin: $sp-btn;
 
 				text-transform: uppercase;
 				line-height: 0.8rem;
@@ -128,7 +128,7 @@
 				}
 
 				a {
-					padding: $spacing-lg;
+					padding: $sp-300;
 					padding-left: 38px;
 
 					transition:
@@ -137,7 +137,7 @@
 						color 450ms ease-out 0ms;
 
 					span {
-						margin-left: $spacing-3x;
+						margin-left: $sp-700;
 
 						transition-delay: 500ms;
 					}
