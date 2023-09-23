@@ -1,23 +1,23 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon as Fa } from "@fortawesome/react-fontawesome";
 import { faAngleRight, faArrowUpRightFromSquare, faBars, faCalculator, faCartShopping, faClone, faCoins, faCopy, faFish, faGlobe, faLayerGroup, faServer, faUserCircle, faWaveSquare } from "@fortawesome/free-solid-svg-icons";
 
 export const icons = {
-	user: <FontAwesomeIcon icon={faUserCircle} />,
-	lang: <FontAwesomeIcon icon={faGlobe} />,
+	user: <Fa icon={faUserCircle} />,
+	lang: <Fa icon={faGlobe} />,
 	menu: {
-		open: <FontAwesomeIcon icon={faBars} />,
-		close: <FontAwesomeIcon icon={faAngleRight} />,
+		open: <Fa icon={faBars} />,
+		close: <Fa icon={faAngleRight} />,
 	},
-	cart: <FontAwesomeIcon icon={faCartShopping} />,
-	externalLink: <FontAwesomeIcon icon={faArrowUpRightFromSquare} />,
+	cart: <Fa icon={faCartShopping} />,
+	externalLink: <Fa icon={faArrowUpRightFromSquare} />,
 	sidebar: {
-		standard: <FontAwesomeIcon icon={faCalculator} />,
-		tips: <FontAwesomeIcon icon={faCoins} />,
-		binary: <FontAwesomeIcon icon={faServer} />,
-		shadow: <FontAwesomeIcon icon={faClone} />,
-		gradient: <FontAwesomeIcon icon={faLayerGroup} />,
-		wave: <FontAwesomeIcon icon={faWaveSquare} />,
-		hooks: <FontAwesomeIcon icon={faFish} />,
+		standard: <Fa icon={faCalculator} />,
+		tips: <Fa icon={faCoins} />,
+		binary: <Fa icon={faServer} />,
+		shadow: <Fa icon={faClone} />,
+		gradient: <Fa icon={faLayerGroup} />,
+		wave: <Fa icon={faWaveSquare} />,
+		hooks: <Fa icon={faFish} />,
 	},
-	copy: <FontAwesomeIcon icon={faCopy} />,
+	copy: <Fa icon={faCopy} />,
 };

@@ -19,6 +19,13 @@ export const calculateResult = operation => {
 	}
 };
 
+const getLastNumber = operation => {
+	// Separates the different numbers
+	// in the operation and get the last one
+	const values = operation.split(/[*/+-]+/);
+	return values[values.length - 1];
+};
+
 export const signResolver = (operation, value, prevResult) => {
 	// Check if the curent operation is empty
 	// if so, adds the preview result before the sign
@@ -45,15 +52,26 @@ export const periodResolver = (operation, value) => {
 	// if so, adds a 0 before the period
 	if (isSign(last)) return operation + "0" + value;
 
-	// Separates the different numbers
-	// in the operation and get the last one
-	const values = operation.split(/[*/+-]+/);
-	const lastValue = values[values.length - 1];
+	// Get last number of the operation
+	const lastNum = getLastNumber(operation);
 
 	// Check if is a decimal searching a period
 	// if so, another period is not added
-	if (lastValue.includes(".")) return operation;
+	if (lastNum.includes(".")) return operation;
 	
 	// if not, adds a new period
+	return operation + value;
+};
+
+export const numberResolver = (operation, value) => {
+	// Get last number of the operation
+	
+	const lastNum = getLastNumber(operation);
+	
+	if (parseInt(lastNum) === 0) {
+		if(value === 0) return operation;
+		return deleteLastValue(operation) + value;
+	}
+
 	return operation + value;
 };

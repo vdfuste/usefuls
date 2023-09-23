@@ -5,8 +5,6 @@
 	flex-direction: column;
 	gap: $sp-500;
 
-	$width: 960px;
-
 	.calculator {
 		flex-direction: column;
 
@@ -16,16 +14,56 @@
 			justify-content: end;
 			font-size: 16pt;
 		}
-
+		
 		.buttons {
 			display: grid;
 			grid-template-columns: repeat(4, 1fr);
+
+			background-color: $background-box;
+			border-top: 1px solid $border-color;
 			
 			.button {
-				padding: $sp-500;
+				width: 96px;
+				height: 72px;
+				
+				font-size: 10pt;
 				background-color: transparent;
+				//border-radius: 0;
 				color: black;
-				border-radius: 0;
+
+				transition: background-color 350ms ease-in-out;
+
+				&.delete {
+					//color: $purple;
+				}
+				
+				&.equal {
+					color: $purple;
+					font-weight: bolder;
+				}
+				
+				&.period {
+					color: $blue;
+					font-size: 14pt;
+					font-weight: bolder;
+				}
+				
+				&.parenthesis {
+					color: $violet;
+				}
+				
+				&.remove {
+					//color: $violet;
+				}
+
+				&.sign {
+					color: $pink;
+				}
+
+				&:hover {
+					background-color: $gray-200;
+					transition: background-color 150ms ease-in-out;
+				}
 			}
 		}
 	}

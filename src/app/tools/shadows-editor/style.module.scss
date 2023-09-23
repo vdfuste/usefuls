@@ -76,7 +76,7 @@
 			width: 350px;
 			padding: $sp-700;
 
-			background-color: lighten($gray-200, 5%);
+			background-color: $background-box;
 			border-left: 1px solid $border-color;
 
 			.settings {

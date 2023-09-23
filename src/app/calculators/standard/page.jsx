@@ -5,23 +5,26 @@ import { Fira_Code } from "next/font/google";
 import style from "./style.module.scss";
 
 import { icons } from "@/utils/icons";
-import { calculateResult, deleteLastValue, isNaN, periodResolver, signResolver } from "@/utils/calculators/standard/utils";
+import { calculateResult, deleteLastValue, isNaN, numberResolver, periodResolver, signResolver } from "@/utils/calculators/standard/utils";
+
+const codeFont = Fira_Code({ subsets: ["latin"] });
 
 const ButtonType = {
-	DELETE: "Delete",
-	EQUAL: "Equal",
-	NUMBER: "Number",
-	PARENTHESIS: "Parenthesis",
-	PERIOD: "Period",
-	REMOVE: "Remove",
-	SIGN: "Sign",
+	DELETE: "delete",
+	EQUAL: "equal",
+	NUMBER: "number",
+	PARENTHESIS: "parenthesis",
+	PERIOD: "period",
+	REMOVE: "remove",
+	SIGN: "sign",
 }; 
 
-const CalcButton = ({ value, label, type, result, setOperation, setResult }) => {	
+const CalcButton = ({ value, label, type, operation, result, setOperation, setResult }) => {	
 	const handleClick = () => {
 		setOperation(prev => {
 			switch(type) {
 				case ButtonType.DELETE:
+					setResult("0");	
 					return "";
 				
 				case ButtonType.PERIOD:
@@ -36,6 +39,11 @@ const CalcButton = ({ value, label, type, result, setOperation, setResult }) => 
 				}
 
 				case ButtonType.REMOVE:
+					if(operation === "") {
+						setResult("0");		
+						return deleteLastValue(result);
+					}
+					
 					if (isNaN(prev)) return "";
 					return deleteLastValue(prev);
 
@@ -44,14 +52,14 @@ const CalcButton = ({ value, label, type, result, setOperation, setResult }) => 
 
 				default:
 				case ButtonType.NUMBER:
-					return prev + value;
+					return numberResolver(prev, value);
 			}
 		});
 	};
 	
 	return (
 		<button
-			className={style.button}
+			className={`${style.button} ${style[type]}`}
 			onClick={handleClick}
 		>
 			{label}
@@ -61,7 +69,7 @@ const CalcButton = ({ value, label, type, result, setOperation, setResult }) => 
 
 const StandardCalc = () => {
 	const [operation, setOperation] = useState("");
-	const [result, setResult] = useState(0);
+	const [result, setResult] = useState("0");
 	
 	const buttons = [
 		{ value: "delete", type: ButtonType.DELETE },
@@ -89,14 +97,15 @@ const StandardCalc = () => {
 		{ value: "=", type: ButtonType.EQUAL },
 		{ value: "+", type: ButtonType.SIGN },
 	];
-
-	const formatedResult = (operation || result).replace("*", "x").replace("/", "÷");
 	
 	return (
 		<div className={style.standardCalc}>
 			<div className={`box ${style.calculator}`}>
-				<div className={style.result}>
-					{formatedResult}
+				<div className={`${style.result} ${codeFont.className}`}>
+					{operation ?
+						(operation).replace("*", "x").replace("/", "÷") :
+						"R:" + result
+					}
 				</div>
 				<div className={style.buttons}>
 					{buttons.map((button) =>
@@ -104,6 +113,7 @@ const StandardCalc = () => {
 							value={button.value}
 							label={button?.label || button.value}
 							type={button.type}
+							operation={operation}
 							result={result}
 							setOperation={setOperation}
 							setResult={setResult}
