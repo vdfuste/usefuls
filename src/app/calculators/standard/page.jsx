@@ -100,11 +100,12 @@ const StandardCalc = () => {
 	
 	return (
 		<div className={style.standardCalc}>
+			<h1>Standard Calculator</h1>
 			<div className={`box ${style.calculator}`}>
 				<div className={`${style.result} ${codeFont.className}`}>
 					{operation ?
 						(operation).replace("*", "x").replace("/", "÷") :
-						"R:" + result
+						result
 					}
 				</div>
 				<div className={style.buttons}>

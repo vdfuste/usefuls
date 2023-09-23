@@ -183,6 +183,7 @@ const GradientEditor = () => {
 
 	return (
 		<div className={style.gradientEditor}>
+			<h1>Gradient Editor</h1>
 			<div className={`box ${style.editor}`}>
 				<div className={style.left}>
 					<div className={style.gradient} style={{ backgroundImage: generatedStyle }}></div>

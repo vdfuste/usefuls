@@ -7,7 +7,7 @@ import CodeBox from "@/components/CodeBox";
 
 const font = Fira_Code({ subsets: ["latin"] });
 
-const FalseTips = () => {
+const TipsCalc = () => {
 	const shadows = [
 		{...defaultShadowStyle},
 		{...defaultShadowStyle},
@@ -17,10 +17,11 @@ const FalseTips = () => {
 	console.log(shadows);
 	
 	return (
-		<div className={style.meh}>
+		<div className={style.tipsCalc}>
+			<h1>Tips Calculator</h1>
 			<CodeBox property="box-shadow" values={shadows} />
 		</div >
 	);
 };
 
-export default FalseTips;
+export default TipsCalc;

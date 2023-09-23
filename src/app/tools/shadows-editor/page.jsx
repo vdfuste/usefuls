@@ -173,6 +173,7 @@ const ShadowEditor = () => {
 
 	return (
 		<div className={style.shadowEditor}>
+			<h1>Shadow Editor</h1>
 			<div className={`box ${style.editor}`}>
 				<div className={style.left}>
 					<div className={style.thingy} style={{ boxShadow: generatedStyle }}>
