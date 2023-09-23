@@ -1,0 +1,32 @@
+@import "@/styles/colors";
+@import "@/styles/sizes";
+
+.standardCalc {
+	flex-direction: column;
+	gap: $sp-500;
+
+	$width: 960px;
+
+	.calculator {
+		flex-direction: column;
+
+		.result {
+			padding: $sp-500;
+			padding-bottom: $sp-200;
+			justify-content: end;
+			font-size: 16pt;
+		}
+
+		.buttons {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			
+			.button {
+				padding: $sp-500;
+				background-color: transparent;
+				color: black;
+				border-radius: 0;
+			}
+		}
+	}
+}
