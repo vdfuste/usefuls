@@ -52,10 +52,18 @@ h1 {
 }
 
 button,
+input {
+	font: inherit;
+	appearance: none;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+
+button,
 input[type=button],
 input[type=submit] {
 	padding: $sp-btn;
-	border: none;
 
 	border-radius: 4px;
 	background-color: $gray-600;

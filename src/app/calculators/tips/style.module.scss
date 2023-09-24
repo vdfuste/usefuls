@@ -3,4 +3,33 @@
 
 .tipsCalc {
 	flex-direction: column;
+	
+	.tips {
+		width: 320px;
+		padding-top: $sp-300;
+		flex-direction: column;
+		
+		background-color: $background-box;
+	
+		.row,
+		.column {
+			padding: $sp-500;
+			gap: $sp-400;
+			border-bottom: 1px solid $gray-200;
+			
+			.row,
+			.column {
+				padding: 0;
+				border-bottom: none;
+			}
+			
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+
+		.column {
+			flex-direction: column;
+		}
+	}
 }
