@@ -1,0 +1,65 @@
+@import "@/styles/colors";
+@import "@/styles/sizes";
+
+.codebox {
+	width: 100%;
+	min-height: 100px;
+
+	flex-direction: column;
+
+	background-color: $gray-800;
+	border-radius: 8px;
+	color: white;
+
+	overflow: hidden;
+
+	.header {
+		margin: $sp-200;
+		margin-left: auto;
+		margin-right: $sp-300;
+		gap: $sp-400;
+		
+		//background-color: #7fdffc;
+
+		.type {
+			text-transform: uppercase;
+		}
+	}
+	
+	.code {
+		margin: 0 $sp-900 $sp-500 $sp-600;
+
+		font-size: 1rem;
+		line-height: 1.5rem;
+		
+		list-style-type: none;
+		
+		&.css {
+			.tab {
+				width: 2.45rem;
+				display: inline-block;
+			}
+		
+			.property {
+				color: #7fdffc;
+			}
+		
+			.value {
+				color: #9de288;
+			}
+			
+			.unit {
+				color: #e2e088;
+			}
+			
+			.hex {
+				color: #e2ac88;
+			}
+		}
+	}
+	
+	textarea {
+		//display: none;
+		tab-size: 4ch;
+	}
+}

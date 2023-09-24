@@ -47,11 +47,23 @@ section {
 	display: flex;
 }
 
+h1 {
+	text-align: center;
+}
+
+button,
+input {
+	font: inherit;
+	appearance: none;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+
 button,
 input[type=button],
 input[type=submit] {
-	padding: $spacing-btn;
-	border: none;
+	padding: $sp-btn;
 
 	border-radius: 4px;
 	background-color: $gray-600;
@@ -69,7 +81,7 @@ svg {
 .box {
 	background-color: $gray-100;
 	border: 1px solid $border-color;
-	border-radius: $spacing-sm;
+	border-radius: $sp-200;
 
 	box-shadow: 0px 12px 24px -12px $gray-400;
 

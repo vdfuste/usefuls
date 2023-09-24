@@ -1,12 +1,11 @@
 import style from "./style.module.scss";
 
-const Calculator = ({ children }) => {
+const Calculators = ({ children }) => {
 	return (
-		<section className={style.calculator}>
-			<h1>Calculator Layout</h1>
+		<section className={style.calculators}>
 			{children}
 		</section>
 	);
 };
 
-export default Calculator;
+export default Calculators;

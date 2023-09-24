@@ -3,7 +3,7 @@
 
 .shadowEditor {
 	flex-direction: column;
-	gap: $spacing-xl;
+	gap: $sp-700;
 
 	$width: 960px;
 
@@ -13,7 +13,6 @@
 		.left {
 			position: relative;
 
-			flex-direction: column;
 			align-items: center;
 			justify-content: center;
 			flex-grow: 1;
@@ -31,15 +30,16 @@
 
 			.shadowButtons {
 				position: absolute;
-				bottom: 0;
-
-				// display: none;
-				justify-content: center;
+				left: 0;
+				// bottom: 0;
 
 				ul {
-					margin-bottom: $spacing-lg;
+					margin-left: $sp-400;
+
 					display: flex;
-					gap: $spacing-sm;
+					flex-direction: column;
+					gap: $sp-200;
+
 					list-style-type: none;
 
 					li {
@@ -74,15 +74,15 @@
 
 		.right {
 			width: 350px;
-			padding: $spacing-xl;
+			padding: $sp-700;
 
-			background-color: lighten($gray-200, 5%);
+			background-color: $background-box;
 			border-left: 1px solid $border-color;
 
 			.settings {
 				width: 100%;
 				flex-direction: column;
-				gap: $spacing-md;
+				gap: $sp-200;
 
 				.row {
 					flex-direction: column;
@@ -97,7 +97,7 @@
 
 	.css {
 		width: $width;
-		padding: $spacing-3x;
+		padding: $sp-700;
 		position: relative;
 
 		font-size: 1rem;

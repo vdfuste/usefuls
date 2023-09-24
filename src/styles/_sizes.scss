@@ -4,11 +4,14 @@ $sidebarWidthCollapsed: 96px;
 $headerHeight: 96px;
 $footerHeight: 72px;
 
-$spacing-sm: 8px;
-$spacing-md: 16px;
-$spacing-lg: 24px;
-$spacing-xl: 32px;
-$spacing-2x: 48px;
-$spacing-3x: 56px;
+$sp-100: 0.25em;	// 4px
+$sp-200: 0.5em;		// 8px
+$sp-300: 1em;		// 16px
+$sp-400: 1.5em;		// 24px
+$sp-500: 2em;		// 32px
+$sp-600: 3em;		// 48px
+$sp-700: 3.5em;		// 56px
+$sp-800: 4.5em;		// 72px
+$sp-900: 8em;		// 128px
 
-$spacing-btn: $spacing-md $spacing-lg;
+$sp-btn: $sp-200 $sp-300;

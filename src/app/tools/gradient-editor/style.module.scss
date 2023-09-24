@@ -3,14 +3,14 @@
 
 .gradientEditor {
 	flex-direction: column;
-	gap: $spacing-xl;
+	gap: $sp-500;
 
 	$width: 960px;
 
 	.editor {
 		.left {
 			width: 640px;
-			height: 480px;
+			min-height: 480px;
 
 			position: relative;
 
@@ -31,7 +31,7 @@
 
 		.right {
 			width: 350px;
-			padding: $spacing-xl;
+			padding: $sp-500;
 
 			background-color: lighten($gray-200, 5%);
 			border-left: 1px solid $border-color;
@@ -39,11 +39,11 @@
 			.settings {
 				width: 100%;
 				flex-direction: column;
-				gap: $spacing-md;
+				gap: $sp-300;
 
 				div {
 					flex-direction: column;
-					gap: $spacing-sm;
+					gap: $sp-100;
 
 					.row {
 						flex-direction: row;
@@ -59,7 +59,7 @@
 
 	.css {
 		width: $width;
-		padding: $spacing-3x;
+		padding: $sp-700;
 		position: relative;
 
 		font-size: 1rem;

@@ -1,5 +1,15 @@
-$primary-color: #458ee0;
-$visited-color: #8069e7;
+$red: 	#e04545;
+$orange:#e07f45;
+$gold: 	#e0b945;
+$yellow:#e0d245;
+$green: #45e07d;
+$teal: 	#45e0a1;
+$cyan: 	#45e0e0;
+$pink: 	#e04599;
+$purple:#9445e0;
+$violet:#ad45e0;
+$indigo:#4545e0;
+$blue: 	#458ee0;
 
 $gray-100: #F5F5F5;
 $gray-200: #E0E0E0;
@@ -11,5 +21,7 @@ $gray-700: #505050;
 $gray-800: #383838;
 $gray-900: #202020;
 
+$primary-color: $blue;
 $background-color: $gray-200;
+$background-box: lighten($gray-200, 5%);
 $border-color: $gray-300;
