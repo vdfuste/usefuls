@@ -1,28 +1,19 @@
 "use client";
 
 import { useState } from "react";
-import { Fira_Code } from "next/font/google";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCopy } from "@fortawesome/free-solid-svg-icons";
 import style from "./style.module.scss";
 
-import { icons } from "@/utils/icons";
-import { settings, defaultShadowStyle } from "@/utils/tools/shadows/settings";
+import { defaultShadowStyle } from "@/utils/tools/shadows/settings";
 import { settingsToCSS } from "@/utils/tools/shadows/utils";
-import { Button as Btn, Color, Range, Text, Toggle } from "@/components/(elements)/inputs";
-import Button from "@/components/(elements)/button";
+import { Button, Color, Range, Text, Toggle } from "@/components/(elements)/inputs";
 import CodeBox from "@/components/CodeBox";
-
-const font = Fira_Code({ subsets: ["latin"] });
-
-const range = 200;
 
 const ShadowBtn = ({ value, color = "#c6c6c6", inset, selected = false, onClick }) => {
 	return (
 		<button
 			className={`${style.shadowBtn} ${selected ? style.selected : ""}`}
 			style={{ boxShadow: `0px 2px 8px -2px ${color} ${inset ? "inset" : ""}` }}
-			onClick={() => onClick()}
+			onClick={onClick}
 		>{value}</button>
 	);
 };
@@ -47,6 +38,8 @@ const ShadowButtons = ({ shadows, shadowId, handleSelectShadow, handleAddShadow 
 };
 
 const ShadowSettings = ({ shadows, shadowId, handleUpdateShadow, handleRemoveShadow }) => {
+	const range = 200;
+	
 	return (
 		<div className={style.settings}>
 			<div className={style.row}>
@@ -108,7 +101,7 @@ const ShadowSettings = ({ shadows, shadowId, handleUpdateShadow, handleRemoveSha
 					onChange={event => handleUpdateShadow("color", event.target.value)} />
 			</div>
 			<div className={style.column}>
-				<Btn
+				<Button
 					className={style.deleteBtn}
 					label={"Delete Shadow"}
 					onClick={handleRemoveShadow}

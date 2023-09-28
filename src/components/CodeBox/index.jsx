@@ -84,7 +84,7 @@ const CodeBox = ({ children, type="css" }) => {
 													<span>{")"}</span>
 												</> : 
 												<>
-													<span className={style.tab}>{"\t"}</span>
+													<span className={style.tab_}>{"\t"}</span>
 													{param.map((value, i, {length}) => {
 														return (
 															<React.Fragment key={"values_" + i}>
