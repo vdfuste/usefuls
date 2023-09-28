@@ -3,11 +3,11 @@
 
 .shadowEditor {
 	flex-direction: column;
-	gap: $sp-700;
 
 	$width: 960px;
 
 	.editor {
+		margin-bottom: $sp-300;
 		width: $width;
 
 		.left {
@@ -30,11 +30,11 @@
 
 			.shadowButtons {
 				position: absolute;
-				left: 0;
+				right: 0;
 				// bottom: 0;
 
 				ul {
-					margin-left: $sp-400;
+					margin-right: $sp-400;
 
 					display: flex;
 					flex-direction: column;
@@ -74,7 +74,6 @@
 
 		.right {
 			width: 350px;
-			padding: $sp-700;
 
 			background-color: $background-box;
 			border-left: 1px solid $border-color;
@@ -84,12 +83,29 @@
 				flex-direction: column;
 				gap: $sp-200;
 
-				.row {
+				.row,
+				.column {
+					padding: $sp-300;
+					gap: $sp-300;
+					border-bottom: 1px solid $gray-200;
+			
+					.row,
+					.column {
+						padding: 0;
+						border-bottom: none;
+					}
+			
+					&:last-child {
+						border-bottom: none;
+					}
+				}
+			
+				.column {
 					flex-direction: column;
 				}
 
 				.deleteBtn {
-					background-color: crimson;
+					//background-color: crimson;
 				}
 			}
 		}
@@ -97,6 +113,7 @@
 
 	.css {
 		width: $width;
+		margin-top: $sp-500;
 		padding: $sp-700;
 		position: relative;
 
@@ -124,13 +141,26 @@
 		}
 
 		.copy {
+			padding: $sp-300;
+			position: absolute;
 			top: 0;
 			right: 0;
-			position: absolute;
+
 			background-color: transparent;
+			border-radius: $sp-200;
+			color: $gray-500;
+
+			transition:
+					background-color 350ms ease-in-out,
+					color 350ms ease-in-out;
 
 			&:hover {
 				background-color: $gray-700;
+				color: $gray-200;
+
+				transition:
+					background-color 150ms ease-in-out,
+					color 150ms ease-in-out;
 			}
 		}
 	}

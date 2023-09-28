@@ -1,0 +1,16 @@
+@import "@/styles/colors";
+@import "@/styles/sizes";
+
+.codeBoxTest {
+	width: 720px;
+	flex-direction: column;
+	
+	.text {
+		margin-bottom: $sp-400;
+		padding: $sp-200;
+
+		textarea {
+			background-color: transparent;
+		}
+	}
+}

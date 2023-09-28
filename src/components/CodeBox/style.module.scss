@@ -14,9 +14,8 @@
 	overflow: hidden;
 
 	.header {
-		margin: $sp-200;
+		height: $sp-600;
 		margin-left: auto;
-		margin-right: $sp-300;
 		gap: $sp-400;
 		
 		//background-color: #7fdffc;
@@ -24,19 +23,44 @@
 		.type {
 			text-transform: uppercase;
 		}
+
+		.copy {
+			background-color: transparent;
+			border-radius: $sp-200;
+			color: $gray-500;
+
+			transition:
+				background-color 350ms ease-in-out,
+				color 350ms ease-in-out;
+
+			&:hover {
+				background-color: $gray-700;
+				color: $gray-200;
+
+				transition:
+					background-color 150ms ease-in-out,
+					color 150ms ease-in-out;
+			}
+		}
 	}
 	
 	.code {
-		margin: 0 $sp-900 $sp-500 $sp-600;
+		margin: 0 $sp-600 $sp-500 $sp-600;
+		flex-direction: column;
 
-		font-size: 1rem;
-		line-height: 1.5rem;
+		font-size: 1em;
+		line-height: 1.5em;
 		
-		list-style-type: none;
+		white-space: pre-wrap;
+		tab-size: 2.45em;
+
+		pre {
+			font-family: inherit;
+		}
 		
 		&.css {
 			.tab {
-				width: 2.45rem;
+				width: 2.45em;
 				display: inline-block;
 			}
 		
@@ -55,6 +79,11 @@
 			.hex {
 				color: #e2ac88;
 			}
+		}
+
+		ul {
+			//margin-bottom: 1.5em;
+			list-style-type: none;
 		}
 	}
 	

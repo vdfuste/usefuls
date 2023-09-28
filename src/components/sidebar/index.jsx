@@ -15,6 +15,7 @@ const Routes = () => {
 			items: [
 				{ label: "Standard", url: "/calculators/standard", icon: icons.sidebar.standard },
 				{ label: "Tips", url: "/calculators/tips", icon: icons.sidebar.tips },
+				//{ label: "Invoice", url: "/calculators/invoice", icon: icons.sidebar.tips },
 				//{ label: "Binary", url: "/calculators/binary", icon: icons.sidebar.binary },
 			]
 		},
@@ -22,7 +23,7 @@ const Routes = () => {
 			title: "Tools",
 			items: [
 				{ label: "Shadow Editor", url: "/tools/shadow-editor", icon: icons.sidebar.shadow },
-				{ label: "Gradient Editor", url: "/tools/gradient-editor", icon: icons.sidebar.gradient },
+				//{ label: "Gradient Editor", url: "/tools/gradient-editor", icon: icons.sidebar.gradient },
 				//{ label: "Sine Wave Editor", url: "/tools/wave-editor", icon: icons.sidebar.wave },
 			]
 		},
