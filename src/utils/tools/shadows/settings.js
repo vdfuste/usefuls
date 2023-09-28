@@ -1,10 +1,10 @@
 export const settings = [
-	{ type: "range", label: "Offset X: ", property: "offsetX" },
-	{ type: "range", label: "Offset Y: ", property: "offsetY" },
-	{ type: "range", label: "Blur Radius: ", property: "blur", min: 0 },
+	{ type: "range", label: "Offset X: ", property: "offsetX", min: -100 },
+	{ type: "range", label: "Offset Y: ", property: "offsetY", min: -100 },
+	{ type: "range", label: "Blur Radius: ", property: "blur" },
 	{ type: "range", label: "Spread: ", property: "spread" },
 	{ type: "color", label: "Color: ", property: "color" },
-	{ type: "checkbox", label: "Inset ", property: "inset" },
+	{ type: "check", label: "Inset ", property: "inset" },
 ];
 
 export const defaultShadowStyle = {

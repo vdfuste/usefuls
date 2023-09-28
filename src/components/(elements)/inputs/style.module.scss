@@ -1,24 +1,105 @@
 @import "@/styles/colors";
 @import "@/styles/sizes";
 
-.button {
-	input[type="button"],
-	input[type="submit"] {
+$thumbSize: 16px;
+$trackHeight: 2px;
+$color: $primary-color;
+
+.button[type=button],
+.button[type=submit] {
+	padding: $sp-btn;
+
+	background-color: $red;
+	border-radius: 4px;
+	color: lighten($red, 30%);;
+	cursor: pointer;
+	
+	&:disabled {
+		background-color: $gray-300;
+		color: $gray-100;
+		cursor: not-allowed;
+	}
+	
+	&:hover {
+		background-color: darken($red, 10%);
+		color: white;
+
 		&:disabled {
-			background-color: $gray-100;
-			cursor: not-allowed;
+			background-color: $gray-300;
 		}
 	}
 }
 
+.checkbox {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: $sp-100;
+
+	cursor: pointer;
+
+	input[type=checkbox] {
+		display: none;
+	
+		&:checked ~ .box {
+			border-color: $color;
+
+			.check {
+				color: $color;
+			}
+		}
+	}
+	
+	.box {
+		width: $sp-400;
+		height: $sp-400;
+		
+		background-color: $gray-100;
+		border: 1px solid $gray-300;
+		border-radius: $sp-200;
+		overflow: hidden;
+
+		transition: border-color 250ms ease-in-out;
+		
+		.check {
+			width: 100%;
+			margin-left: 1px;
+
+			align-items: center;
+			justify-content: center;
+			
+			color: $gray-100;
+			transition: color 250ms ease-in-out;
+			
+			svg {
+				font-size: 12px;
+			}
+		}
+	}
+	
+	&:hover {
+		.box {
+			border-color: $color;
+			transition: border-color 150ms ease-in-out;
+		}
+	}
+}
+
+.color {
+	display: flex;
+	flex-direction: row;
+	gap: $sp-100;
+}
+
 .text {
 	width: 100%;
+	margin-top: $sp-300;
 	position: relative;
 
 	flex-direction: column;
 	//border: 1px solid $gray-300;
 
-	input,
+	input[type=text],
 	textarea {
 		width: 100%;
 		padding: $sp-100;
@@ -66,9 +147,66 @@
 		
 		.fill {
 			width: 0%;
-			background-color: $primary-color;
+			background-color: $color;
 
 			transition: width 250ms ease-in-out;
+		}
+	}
+}
+
+.toggle {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: $sp-200;
+	
+	cursor: pointer;
+
+	input[type=checkbox] {
+		display: none;
+
+		&:checked~.track {
+			justify-content: flex-end;
+			background-color: $color;
+
+			.thumb {
+
+			}
+		}
+	}
+
+	.track {
+		width: $sp-500;
+		height: $sp-200;
+
+		align-items: center;
+		justify-content: flex-start;
+
+		background-color: $gray-300;
+		border-radius: $sp-200;
+
+		transition: background-color 250ms ease-in-out;
+
+		.thumb {
+			width: $thumbSize;
+			height: $thumbSize;
+
+			//margin-top: 32px;
+			
+			
+			appearance: none;
+			background-color: $gray-100;
+			border: 2px solid $color;
+			border-radius: 50%;
+		
+			box-shadow: -4px 4px 16px rgb(black, 0.2);
+		}
+	}
+
+	&:hover {
+		.track {
+			//background-color: $color;
+			//transition: background-color 150ms ease-in-out;
 		}
 	}
 }
@@ -78,10 +216,6 @@
 	display: grid;
 	grid-template-areas: "stack";
 	flex-shrink: 1;
-
-	$thumbSize: 24px;
-	$trackHeight: 2px;
-	$color: $primary-color;
 
 	input[type=range] {
 		grid-area: stack;

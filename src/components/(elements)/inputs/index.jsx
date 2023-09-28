@@ -1,26 +1,61 @@
 "use client";
+
 import style from "./style.module.scss";
 
-export const Button = ({ label, onClick, type = "button", disabled = false }) => {
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
+
+export const Button = ({ className, label, onClick, type = "button", disabled = false }) => {
 	return (
-		<div className={style.button}>
-			<input
-				type={type}
-				value={label}
-				onClick={onClick}
-				disabled={disabled} />
-		</div>
+		<input
+			className={`${style.button} ${className}`}
+			type={type}
+			value={label}
+			onClick={onClick}
+			disabled={disabled} />
 	);
 };
 
-export const Text = ({ value, placeholder, onChange }) => {
+export const Checkbox = ({ label, checked = false, onChange }) => {
+	return (
+		<label className={`${style.checkbox} no-select-text`}>
+			<input
+				type="checkbox"
+				name={label}
+				checked={checked}
+				onChange={onChange} />
+
+			<div className={style.box}>
+				<div className={style.check}>
+					<FontAwesomeIcon icon={faCheck} />
+				</div>
+			</div>
+			<span htmlFor={label}>{label}</span>
+		</label>
+	);
+};
+
+export const Color = ({ label, value, onChange }) => {
+	return (
+		<label className={style.color}>
+			<input
+				type="color"
+				value={value}
+				onChange={onChange} />
+			<span htmlFor={label}>{label}</span>
+		</label>
+	);
+};
+
+export const Text = ({ value, placeholder, onChange, spellCheck = false }) => {
 	return (
 		<div className={style.text}>
 			<input
 				type="text"
 				value={value}
 				placeholder=" "
-				onChange={onChange} />
+				onChange={onChange}
+				spellCheck={spellCheck} />
 
 			<span className={style.placeholder}>
 				{placeholder}
@@ -33,21 +68,39 @@ export const Text = ({ value, placeholder, onChange }) => {
 	);
 };
 
-export const TextArea = ({ value, placeholder, onChange, height = "250px" }) => {
+export const TextArea = ({ value, placeholder, onChange, height = "250px", spellCheck = false }) => {
 	return (
 		<div className={style.text}>
 			<textarea
 				style={{ height }}
 				value={value}
 				placeholder={placeholder}
-				onChange={onChange} />
+				onChange={onChange}
+				spellCheck={spellCheck} />
 		</div>
+	);
+};
+
+export const Toggle = ({ label, checked = false, onChange }) => {
+	return (
+		<label className={`${style.toggle} no-select-text`}>
+			<input
+				type="checkbox"
+				name={label}
+				checked={checked}
+				onChange={onChange} />
+
+			<div className={style.track}>
+				<div className={style.thumb}></div>
+			</div>
+			<span htmlFor={label}>{label}</span>
+		</label>
 	);
 };
 
 export const Range = ({ className, value, min = 0, max = 100, step = 0.1, onChange }) => {
 	const progressStyle = {
-		width: `${value}%`
+		width: `${(value - min)/(max - min) * 100}%`
 	};
 
 	return (
@@ -64,3 +117,4 @@ export const Range = ({ className, value, min = 0, max = 100, step = 0.1, onChan
 		</div>
 	);
 };
+

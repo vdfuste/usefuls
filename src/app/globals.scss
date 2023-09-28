@@ -60,20 +60,6 @@ input {
 	cursor: pointer;
 }
 
-button,
-input[type=button],
-input[type=submit] {
-	padding: $sp-btn;
-
-	border-radius: 4px;
-	background-color: $gray-600;
-	color: white;
-
-	cursor: pointer;
-
-	&:hover {}
-}
-
 svg {
 	height: 16px;
 }
@@ -85,5 +71,12 @@ svg {
 
 	box-shadow: 0px 12px 24px -12px $gray-400;
 
-	overflow: hidden;
+	overflow: hidden;	
+}
+
+.no-select-text {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
